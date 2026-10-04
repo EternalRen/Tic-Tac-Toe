@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First Project</title>
+        <style>
+            .board  {
+                width: 250px;
+                height: 250px;
+                margin: auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 15px;
+                
+            }
+            .cell {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+
+    
+    <body>
+        <h1 style="font-size: 50px;text-align: center;margin-top: 30px;margin-bottom: 30px;">
+            Tic Tac Toe
+        </h1>
+        
+        <hr>
+        <p id="status" style="text-align: center;">Player "X" Turn</p>
+        <hr>
+
+        <div id="board1" class="board">  
+            <button id="cell1" class="cell"></button>
+            <button id="cell2" class="cell"></button>
+            <button id="cell3" class="cell"></button>
+            <button id="cell4" class="cell"></button>
+            <button id="cell5" class="cell"></button>
+            <button id="cell6" class="cell"></button>
+            <button id="cell7" class="cell"></button>
+            <button id="cell8" class="cell"></button>
+            <button id="cell9" class="cell"></button>    
+        </div>
+
+        <h2 id="win" style="text-align: center;"></h2>
+        
+        <div style="text-align: center;">
+            <button style="margin: 50px;">Reset</button>
+        </div>
+
+        
+        <script>
+            let player = "X"
+            const status = document.querySelector("#status");
+            const win = document.querySelector("#win")
+            
+
+            const cell1 = document.querySelector("#cell1");
+            cell1.addEventListener("click", function() {
+                if (cell1.textContent == "") {
+                    cell1.textContent = player;}
+                
+                if (player == "X") {
+                    player = "O";
+                    status.textContent = 'Player "O" Turn';
+                }  else {
+                    player = "X";
+                    status.textContent = 'Player "X" Turn';
+               }
+                if (
+                    (cell1.textContent == "X" && cell2.textContent == "X" && cell3.textContent == "X") ||
+                    (cell4.textContent == "X" && cell5.textContent == "X" && cell6.textContent == "X") ||
+                    (cell7.textContent == "X" && cell8.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell4.textContent == "X" && cell7.textContent == "X") ||
+                    (cell2.textContent == "X" && cell5.textContent == "X" && cell8.textContent == "X") ||
+                    (cell3.textContent == "X" && cell6.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell5.textContent == "X" && cell9.textContent == "X") ||
+                    (cell3.textContent == "X" && cell5.textContent == "X" && cell7.textContent == "X")
+                ) {
+                win.textContent = 'Player "X" Won!';
+                }
+
+                if (
+                    (cell1.textContent == "O" && cell2.textContent == "O" && cell3.textContent == "O") ||
+                    (cell4.textContent == "O" && cell5.textContent == "O" && cell6.textContent == "O") ||
+                    (cell7.textContent == "O" && cell8.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell4.textContent == "O" && cell7.textContent == "O") ||
+                    (cell2.textContent == "O" && cell5.textContent == "O" && cell8.textContent == "O") ||
+                    (cell3.textContent == "O" && cell6.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell5.textContent == "O" && cell9.textContent == "O") ||
+                    (cell3.textContent == "O" && cell5.textContent == "O" && cell7.textContent == "O")
+                ) {
+                win.textContent = 'Player "O" Won!';
+                }
+            
+                });
+            
+                
+            
+            const cell2 = document.querySelector("#cell2");
+            cell2.addEventListener("click", function() {
+                if (cell2.textContent == "") {
+                    cell2.textContent = player;}
+        
+
+                if (player == "X") {
+                    player = "O";
+                    status.textContent = 'Player "O" Turn';
+                }  else {
+                    player = "X";
+                    status.textContent = 'Player "X" Turn';
+               }
+                if (
+                    (cell1.textContent == "X" && cell2.textContent == "X" && cell3.textContent == "X") ||
+                    (cell4.textContent == "X" && cell5.textContent == "X" && cell6.textContent == "X") ||
+                    (cell7.textContent == "X" && cell8.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell4.textContent == "X" && cell7.textContent == "X") ||
+                    (cell2.textContent == "X" && cell5.textContent == "X" && cell8.textContent == "X") ||
+                    (cell3.textContent == "X" && cell6.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell5.textContent == "X" && cell9.textContent == "X") ||
+                    (cell3.textContent == "X" && cell5.textContent == "X" && cell7.textContent == "X")
+                ) {
+                win.textContent = 'Player "X" Won!';
+                }
+                if (
+                    (cell1.textContent == "O" && cell2.textContent == "O" && cell3.textContent == "O") ||
+                    (cell4.textContent == "O" && cell5.textContent == "O" && cell6.textContent == "O") ||
+                    (cell7.textContent == "O" && cell8.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell4.textContent == "O" && cell7.textContent == "O") ||
+                    (cell2.textContent == "O" && cell5.textContent == "O" && cell8.textContent == "O") ||
+                    (cell3.textContent == "O" && cell6.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell5.textContent == "O" && cell9.textContent == "O") ||
+                    (cell3.textContent == "O" && cell5.textContent == "O" && cell7.textContent == "O")
+                ) {
+                win.textContent = 'Player "O" Won!';
+                }
+            
+                });
+            
+        
+            const cell3 = document.querySelector("#cell3");
+            cell3.addEventListener("click", function() {
+                if (cell3.textContent == "") {
+                    cell3.textContent = player;}
+                
+                if (player == "X") {
+                    player = "O";
+                    status.textContent = 'Player "O" Turn';
+                }  else {
+                    player = "X";
+                    status.textContent = 'Player "X" Turn';
+               }
+                if (
+                    (cell1.textContent == "X" && cell2.textContent == "X" && cell3.textContent == "X") ||
+                    (cell4.textContent == "X" && cell5.textContent == "X" && cell6.textContent == "X") ||
+                    (cell7.textContent == "X" && cell8.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell4.textContent == "X" && cell7.textContent == "X") ||
+                    (cell2.textContent == "X" && cell5.textContent == "X" && cell8.textContent == "X") ||
+                    (cell3.textContent == "X" && cell6.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell5.textContent == "X" && cell9.textContent == "X") ||
+                    (cell3.textContent == "X" && cell5.textContent == "X" && cell7.textContent == "X")
+                ) {
+                win.textContent = 'Player "X" Won!';
+                }
+                if (
+                    (cell1.textContent == "O" && cell2.textContent == "O" && cell3.textContent == "O") ||
+                    (cell4.textContent == "O" && cell5.textContent == "O" && cell6.textContent == "O") ||
+                    (cell7.textContent == "O" && cell8.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell4.textContent == "O" && cell7.textContent == "O") ||
+                    (cell2.textContent == "O" && cell5.textContent == "O" && cell8.textContent == "O") ||
+                    (cell3.textContent == "O" && cell6.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell5.textContent == "O" && cell9.textContent == "O") ||
+                    (cell3.textContent == "O" && cell5.textContent == "O" && cell7.textContent == "O")
+                ) {
+                win.textContent = 'Player "O" Won!';
+                }
+            
+                });
+            
+            
+            const cell4 = document.querySelector("#cell4");
+            cell4.addEventListener("click", function() {
+                if (cell4.textContent == "") {
+                    cell4.textContent = player;}
+                
+                if (player == "X") {
+                    player = "O";
+                    status.textContent = 'Player "O" Turn';
+                }  else {
+                    player = "X";
+                    status.textContent = 'Player "X" Turn';
+               }
+                if (
+                    (cell1.textContent == "X" && cell2.textContent == "X" && cell3.textContent == "X") ||
+                    (cell4.textContent == "X" && cell5.textContent == "X" && cell6.textContent == "X") ||
+                    (cell7.textContent == "X" && cell8.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell4.textContent == "X" && cell7.textContent == "X") ||
+                    (cell2.textContent == "X" && cell5.textContent == "X" && cell8.textContent == "X") ||
+                    (cell3.textContent == "X" && cell6.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell5.textContent == "X" && cell9.textContent == "X") ||
+                    (cell3.textContent == "X" && cell5.textContent == "X" && cell7.textContent == "X")
+                ) {
+                win.textContent = 'Player "X" Won!';
+                }
+                if (
+                    (cell1.textContent == "O" && cell2.textContent == "O" && cell3.textContent == "O") ||
+                    (cell4.textContent == "O" && cell5.textContent == "O" && cell6.textContent == "O") ||
+                    (cell7.textContent == "O" && cell8.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell4.textContent == "O" && cell7.textContent == "O") ||
+                    (cell2.textContent == "O" && cell5.textContent == "O" && cell8.textContent == "O") ||
+                    (cell3.textContent == "O" && cell6.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell5.textContent == "O" && cell9.textContent == "O") ||
+                    (cell3.textContent == "O" && cell5.textContent == "O" && cell7.textContent == "O")
+                ) {
+                win.textContent = 'Player "O" Won!';
+                }
+            
+                });
+            
+
+            const cell5 = document.querySelector("#cell5");
+            cell5.addEventListener("click", function() {
+                if (cell5.textContent == "") {
+                    cell5.textContent = player;}
+                
+                if (player == "X") {
+                    player = "O";
+                    status.textContent = 'Player "O" Turn';
+                }  else {
+                    player = "X";
+                    status.textContent = 'Player "X" Turn';
+               }
+                if (
+                    (cell1.textContent == "X" && cell2.textContent == "X" && cell3.textContent == "X") ||
+                    (cell4.textContent == "X" && cell5.textContent == "X" && cell6.textContent == "X") ||
+                    (cell7.textContent == "X" && cell8.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell4.textContent == "X" && cell7.textContent == "X") ||
+                    (cell2.textContent == "X" && cell5.textContent == "X" && cell8.textContent == "X") ||
+                    (cell3.textContent == "X" && cell6.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell5.textContent == "X" && cell9.textContent == "X") ||
+                    (cell3.textContent == "X" && cell5.textContent == "X" && cell7.textContent == "X")
+                ) {
+                win.textContent = 'Player "X" Won!';
+                }
+                if (
+                    (cell1.textContent == "O" && cell2.textContent == "O" && cell3.textContent == "O") ||
+                    (cell4.textContent == "O" && cell5.textContent == "O" && cell6.textContent == "O") ||
+                    (cell7.textContent == "O" && cell8.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell4.textContent == "O" && cell7.textContent == "O") ||
+                    (cell2.textContent == "O" && cell5.textContent == "O" && cell8.textContent == "O") ||
+                    (cell3.textContent == "O" && cell6.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell5.textContent == "O" && cell9.textContent == "O") ||
+                    (cell3.textContent == "O" && cell5.textContent == "O" && cell7.textContent == "O")
+                ) {
+                win.textContent = 'Player "O" Won!';
+                }
+            
+                });
+        
+
+            const cell6 = document.querySelector("#cell6");
+            cell6.addEventListener("click", function() {
+                if (cell6.textContent == "") {
+                    cell6.textContent = player;}
+                
+                if (player == "X") {
+                    player = "O";
+                    status.textContent = 'Player "O" Turn';
+                }  else {
+                    player = "X";
+                    status.textContent = 'Player "X" Turn';
+               }
+                if (
+                    (cell1.textContent == "X" && cell2.textContent == "X" && cell3.textContent == "X") ||
+                    (cell4.textContent == "X" && cell5.textContent == "X" && cell6.textContent == "X") ||
+                    (cell7.textContent == "X" && cell8.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell4.textContent == "X" && cell7.textContent == "X") ||
+                    (cell2.textContent == "X" && cell5.textContent == "X" && cell8.textContent == "X") ||
+                    (cell3.textContent == "X" && cell6.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell5.textContent == "X" && cell9.textContent == "X") ||
+                    (cell3.textContent == "X" && cell5.textContent == "X" && cell7.textContent == "X")
+                ) {
+                win.textContent = 'Player "X" Won!';
+                }
+                if (
+                    (cell1.textContent == "O" && cell2.textContent == "O" && cell3.textContent == "O") ||
+                    (cell4.textContent == "O" && cell5.textContent == "O" && cell6.textContent == "O") ||
+                    (cell7.textContent == "O" && cell8.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell4.textContent == "O" && cell7.textContent == "O") ||
+                    (cell2.textContent == "O" && cell5.textContent == "O" && cell8.textContent == "O") ||
+                    (cell3.textContent == "O" && cell6.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell5.textContent == "O" && cell9.textContent == "O") ||
+                    (cell3.textContent == "O" && cell5.textContent == "O" && cell7.textContent == "O")
+                ) {
+                win.textContent = 'Player "O" Won!';
+                }
+            
+                });
+            
+
+            const cell7 = document.querySelector("#cell7");
+            cell7.addEventListener("click", function() {
+                if (cell7.textContent == "") {
+                    cell7.textContent = player;}
+                
+                if (player == "X") {
+                    player = "O";
+                    status.textContent = 'Player "O" Turn';
+                }  else {
+                    player = "X";
+                    status.textContent = 'Player "X" Turn';
+               }
+                if (
+                    (cell1.textContent == "X" && cell2.textContent == "X" && cell3.textContent == "X") ||
+                    (cell4.textContent == "X" && cell5.textContent == "X" && cell6.textContent == "X") ||
+                    (cell7.textContent == "X" && cell8.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell4.textContent == "X" && cell7.textContent == "X") ||
+                    (cell2.textContent == "X" && cell5.textContent == "X" && cell8.textContent == "X") ||
+                    (cell3.textContent == "X" && cell6.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell5.textContent == "X" && cell9.textContent == "X") ||
+                    (cell3.textContent == "X" && cell5.textContent == "X" && cell7.textContent == "X")
+                ) {
+                win.textContent = 'Player "X" Won!';
+                }
+                if (
+                    (cell1.textContent == "O" && cell2.textContent == "O" && cell3.textContent == "O") ||
+                    (cell4.textContent == "O" && cell5.textContent == "O" && cell6.textContent == "O") ||
+                    (cell7.textContent == "O" && cell8.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell4.textContent == "O" && cell7.textContent == "O") ||
+                    (cell2.textContent == "O" && cell5.textContent == "O" && cell8.textContent == "O") ||
+                    (cell3.textContent == "O" && cell6.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell5.textContent == "O" && cell9.textContent == "O") ||
+                    (cell3.textContent == "O" && cell5.textContent == "O" && cell7.textContent == "O")
+                ) {
+                win.textContent = 'Player "O" Won!';
+                }
+            
+                });
+        
+
+            const cell8 = document.querySelector("#cell8");
+            cell8.addEventListener("click", function() {
+                if (cell8.textContent == "") {
+                    cell8.textContent = player;}
+                
+                if (player == "X") {
+                    player = "O";
+                    status.textContent = 'Player "O" Turn';
+                }  else {
+                    player = "X";
+                    status.textContent = 'Player "X" Turn';
+                }if (
+                    (cell1.textContent == "X" && cell2.textContent == "X" && cell3.textContent == "X") ||
+                    (cell4.textContent == "X" && cell5.textContent == "X" && cell6.textContent == "X") ||
+                    (cell7.textContent == "X" && cell8.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell4.textContent == "X" && cell7.textContent == "X") ||
+                    (cell2.textContent == "X" && cell5.textContent == "X" && cell8.textContent == "X") ||
+                    (cell3.textContent == "X" && cell6.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell5.textContent == "X" && cell9.textContent == "X") ||
+                    (cell3.textContent == "X" && cell5.textContent == "X" && cell7.textContent == "X")
+                ) {
+                win.textContent = 'Player "X" Won!';
+                }
+                if (
+                    (cell1.textContent == "O" && cell2.textContent == "O" && cell3.textContent == "O") ||
+                    (cell4.textContent == "O" && cell5.textContent == "O" && cell6.textContent == "O") ||
+                    (cell7.textContent == "O" && cell8.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell4.textContent == "O" && cell7.textContent == "O") ||
+                    (cell2.textContent == "O" && cell5.textContent == "O" && cell8.textContent == "O") ||
+                    (cell3.textContent == "O" && cell6.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell5.textContent == "O" && cell9.textContent == "O") ||
+                    (cell3.textContent == "O" && cell5.textContent == "O" && cell7.textContent == "O")
+                ) {
+                win.textContent = 'Player "O" Won!';
+                }
+            
+                });
+            
+                
+
+            const cell9 = document.querySelector("#cell9");
+            cell9.addEventListener("click", function() {
+                if (cell9.textContent == "") {
+                    cell9.textContent = player;}
+                
+                if (player == "X") {
+                    player = "O";
+                    status.textContent = 'Player "O" Turn';
+                }  else {
+                    player = "X";
+                    status.textContent = 'Player "X" Turn';
+               }
+                if (
+                    (cell1.textContent == "X" && cell2.textContent == "X" && cell3.textContent == "X") ||
+                    (cell4.textContent == "X" && cell5.textContent == "X" && cell6.textContent == "X") ||
+                    (cell7.textContent == "X" && cell8.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell4.textContent == "X" && cell7.textContent == "X") ||
+                    (cell2.textContent == "X" && cell5.textContent == "X" && cell8.textContent == "X") ||
+                    (cell3.textContent == "X" && cell6.textContent == "X" && cell9.textContent == "X") ||
+                    (cell1.textContent == "X" && cell5.textContent == "X" && cell9.textContent == "X") ||
+                    (cell3.textContent == "X" && cell5.textContent == "X" && cell7.textContent == "X")
+                ) {
+                win.textContent = 'Player "X" Won!';
+                }
+                if (
+                    (cell1.textContent == "O" && cell2.textContent == "O" && cell3.textContent == "O") ||
+                    (cell4.textContent == "O" && cell5.textContent == "O" && cell6.textContent == "O") ||
+                    (cell7.textContent == "O" && cell8.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell4.textContent == "O" && cell7.textContent == "O") ||
+                    (cell2.textContent == "O" && cell5.textContent == "O" && cell8.textContent == "O") ||
+                    (cell3.textContent == "O" && cell6.textContent == "O" && cell9.textContent == "O") ||
+                    (cell1.textContent == "O" && cell5.textContent == "O" && cell9.textContent == "O") ||
+                    (cell3.textContent == "O" && cell5.textContent == "O" && cell7.textContent == "O")
+                ) {
+                win.textContent = 'Player "O" Won!';
+                }
+            
+                });
+            
+
+    
+    
+
+        
+        </script> 
+        
+    </body>  
+    
+</html>
+        
